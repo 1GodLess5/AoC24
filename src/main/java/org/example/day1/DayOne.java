@@ -1,17 +1,14 @@
 package org.example.day1;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import org.example.utility.FileHandler;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Objects;
-import java.util.Scanner;
 
-public class DayOne {
-    private final String fileName;
-
+public class DayOne extends FileHandler {
     public DayOne(String fileName) {
-        this.fileName = fileName;
+        super(fileName);
     }
 
     public void totalDistance() {
@@ -46,22 +43,6 @@ public class DayOne {
         }
 
         System.out.println(total);
-    }
-
-    private ArrayList<String> convertFileToLines(String fileName) {
-        ArrayList<String> fileLine = new ArrayList<>();
-        try {
-            File file = new File(fileName);
-            Scanner scanner = new Scanner(file);
-            while (scanner.hasNextLine()) {
-                fileLine.add(scanner.nextLine());
-            }
-        } catch (
-                FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-
-        return fileLine;
     }
 
     private ArrayList<Integer> fileLinesToIntegerLists(ArrayList<String> toConvert, boolean firstColumn) {

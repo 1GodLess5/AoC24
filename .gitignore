@@ -38,4 +38,4 @@ build/
 .DS_Store
 
 ### To comply with AoC rules ###
-src/main/resources/inputFiles/
+src/main/resources/inputFiles
